@@ -1,14 +1,13 @@
 #!/bin/bash
 set -euxo pipefail
 
+TARGET=/usr/share/nginx/html
+
 echo "[BeforeInstall] whoami=$(whoami)"
-ls -al /var/www/html || true
+ls -al "$TARGET" || true
 
-# 혹시 immutable 속성 걸려있을 수도 있어서 해제 시도(없으면 무시)
-chattr -i /var/www/html/index.html 2>/dev/null || true
-
-rm -fv /var/www/html/index.html || true
-rm -rfv /var/www/html/* || true
+rm -fv "$TARGET/index.html" || true
+rm -rfv "$TARGET"/* || true
 
 echo "[BeforeInstall] after delete"
-ls -al /var/www/html || true
+ls -al "$TARGET" || true

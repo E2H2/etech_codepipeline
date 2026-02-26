@@ -1,8 +1,10 @@
 version: 0.0
 os: linux
+
 files:
-  - source: /
-    destination: /var/www/html
+  - source: web/
+    destination: /usr/share/nginx/html
+
 hooks:
   ApplicationStart:
     - location: scripts/restart.sh

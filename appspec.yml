@@ -5,8 +5,3 @@ files:
   - source: /
     destination: /usr/share/nginx/html
 
-hooks:
-  ApplicationStart:
-    - location: scripts/restart.sh
-      timeout: 300
-      runas: root

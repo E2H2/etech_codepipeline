@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 
 files:
-  - source: web/
+  - source: /
     destination: /usr/share/nginx/html
 
 hooks:
